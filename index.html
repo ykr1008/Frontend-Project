@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rick and Morty Explorer</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script type="module">
+      import { fetchCharacters } from "./js/api.js";
+
+      console.log("all:", await fetchCharacters());
+      console.log(
+        "rick alive:",
+        await fetchCharacters({ name: "rick", status: "alive" }),
+      );
+      console.log("nothing:", await fetchCharacters({ name: "zzzzzz" }));
+    </script>
+  </body>
+</html>
