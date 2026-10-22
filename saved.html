@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saved Characters | Rick and Morty Explorer</title>
+  <meta name="description" content="Your saved Rick and Morty characters, with a personal note for each.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="logo">Rick and Morty Explorer</p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="saved.html" aria-current="page">Saved</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1 id="page-heading" tabindex="-1">Saved characters</h1>
+    <p id="status-message" role="status"></p>
+    <ul id="saved-list"></ul>
+  </main>
+
+  <footer>
+    <p>Data from <a href="https://rickandmortyapi.com">The Rick and Morty API</a>.</p>
+  </footer>
+
+  <template id="saved-template">
+    <li>
+      <article>
+        <img alt="" width="300" height="300" loading="lazy">
+        <h2><a href="character.html"></a></h2>
+        <p class="meta"></p>
+        <form>
+          <label>Your note</label>
+          <textarea name="note" rows="3" maxlength="200"></textarea>
+          <div class="actions">
+            <button type="submit">Save note</button>
+            <button type="button" class="remove">Remove</button>
+          </div>
+        </form>
+      </article>
+    </li>
+  </template>
+
+  <script type="module" src="js/saved.js"></script>
+</body>
+</html>

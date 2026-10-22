@@ -1,9 +1,21 @@
-#character-list {
+#character-list,
+#saved-list {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 img {
