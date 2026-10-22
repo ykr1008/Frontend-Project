@@ -19,6 +19,14 @@ img {
   animation: shimmer 1.2s infinite;
 }
 
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+}
+dt { font-weight: 700; }
+dd { margin: 0; }
+
 @keyframes shimmer {
   to { background-position: -200% 0; }
 }
@@ -26,3 +34,4 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .skeleton { animation: none; }
 }
+
