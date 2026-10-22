@@ -1,21 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rick and Morty Explorer</title>
-  </head>
-  <body>
-    <h1>Hello</h1>
-    <script type="module">
-      import { fetchCharacters } from "./js/api.js";
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Characters | Rick and Morty Explorer</title>
+  <meta name="description" content="Search and filter Rick and Morty characters, then save your favourites with personal notes.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-      console.log("all:", await fetchCharacters());
-      console.log(
-        "rick alive:",
-        await fetchCharacters({ name: "rick", status: "alive" }),
-      );
-      console.log("nothing:", await fetchCharacters({ name: "zzzzzz" }));
-    </script>
-  </body>
+  <header>
+    <p class="logo">Rick and Morty Explorer</p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Browse</a></li>
+        <li><a href="saved.html">Saved</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Browse characters</h1>
+
+    <form id="filters" role="search" aria-label="Search characters">
+      <div>
+        <label for="search">Name</label>
+        <input id="search" name="name" type="search" autocomplete="off">
+      </div>
+      <div>
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          <option value="">Any</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </div>
+    </form>
+
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Results</h2>
+      <p id="status-message" role="status"></p>
+      <ul id="character-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data from <a href="https://rickandmortyapi.com">The Rick and Morty API</a>.</p>
+  </footer>
+
+  <template id="card-template">
+    <li>
+      <article>
+        <img alt="" width="300" height="300" loading="lazy">
+        <h3><a href="character.html"></a></h3>
+        <p class="meta"></p>
+      </article>
+    </li>
+  </template>
+
+  <script type="module" src="js/main.js"></script>
+</body>
 </html>
