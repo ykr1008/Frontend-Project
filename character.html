@@ -1,49 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Character | Rick and Morty Explorer</title>
-  <meta name="description" content="Details for a Rick and Morty character, with an option to save them to your list.">
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Character | Rick and Morty Explorer</title>
+    <meta
+      name="description"
+      content="Details for a Rick and Morty character, with an option to save them to your list."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://rickandmortyapi.com" />
+    <link rel="preconnect" href="https://images.weserv.nl" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <p class="logo">Rick and Morty Explorer</p>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="index.html">Browse</a></li>
-        <li><a href="saved.html">Saved</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+      <p class="logo">Rick and Morty Explorer</p>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Browse</a></li>
+          <li><a href="saved.html">Saved</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main id="main">
-    <p><a href="index.html">&larr; Back to browse</a></p>
-    <p id="status-message" role="status"></p>
+    <main id="main">
+      <p><a href="index.html">&larr; Back to browse</a></p>
+      <p id="status-message" role="status"></p>
 
-    <article id="character" hidden>
-      <h1 id="char-name"></h1>
-      <img id="char-image" alt="" width="300" height="300">
-      <dl>
-        <dt>Status</dt><dd id="char-status"></dd>
-        <dt>Species</dt><dd id="char-species"></dd>
-        <dt>Gender</dt><dd id="char-gender"></dd>
-        <dt>Origin</dt><dd id="char-origin"></dd>
-        <dt>Last known location</dt><dd id="char-location"></dd>
-        <dt>Episodes</dt><dd id="char-episodes"></dd>
-      </dl>
-      <button type="button" id="save-btn" aria-pressed="false">Save character</button>
-    </article>
-  </main>
+      <article id="character" hidden>
+        <h1 id="char-name"></h1>
+        <img id="char-image" alt="" width="300" height="300" />
+        <dl>
+          <dt>Status</dt>
+          <dd id="char-status"></dd>
+          <dt>Species</dt>
+          <dd id="char-species"></dd>
+          <dt>Gender</dt>
+          <dd id="char-gender"></dd>
+          <dt>Origin</dt>
+          <dd id="char-origin"></dd>
+          <dt>Last known location</dt>
+          <dd id="char-location"></dd>
+          <dt>Episodes</dt>
+          <dd id="char-episodes"></dd>
+        </dl>
+        <button type="button" id="save-btn" aria-pressed="false">
+          Save character
+        </button>
+      </article>
+    </main>
 
-  <footer>
-    <p>Data from <a href="https://rickandmortyapi.com">The Rick and Morty API</a>.</p>
-  </footer>
+    <footer>
+      <p>
+        Data from
+        <a href="https://rickandmortyapi.com">The Rick and Morty API</a>.
+      </p>
+    </footer>
 
-  <script type="module" src="js/character.js"></script>
-</body>
+    <script type="module" src="js/character.js"></script>
+  </body>
 </html>
