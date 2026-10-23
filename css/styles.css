@@ -83,6 +83,7 @@ nav a[aria-current="page"] { background: var(--accent); color: #fff; }
 
 main {
   max-width: 72rem;
+  min-height: 70vh;
   margin: 0 auto;
   padding: 1rem;
 }
