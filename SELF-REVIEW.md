@@ -18,8 +18,9 @@ Tested on the live site: https://frontend-project-zh5b.onrender.com/
 **Fixed:** (2) the whole card is now one click target, with a single focus ring around the card. (3) added Previous/Next with "Page X of Y"; the page resets to 1 on a new search or filter, and focus moves to the results heading after a page change.
 
 ## 4. Slow 3G
-**Found:**
-**Fixed:**
+**Tested:** live site, Chrome Incognito, DevTools Slow 3G with cache disabled. Hard reload of Browse, scrolling, a fast `rick` then `morty` search, Next/Previous, Offline during a slow load, and the Detail and Saved pages.
+**Found:** skeleton appeared after about 2 s and cards with text after about 6 s. No layout jumps, blank flashes or collapsed cards. The fast `rick` then `morty` search ended on Morty's results, so the request-id guard works. (Placeholder issue: did / did not come back.)
+**Fixed:** nothing needed.
 
 ## 5. Lighthouse
 **Found:**
