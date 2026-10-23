@@ -13,8 +13,9 @@ Tested on the live site: https://frontend-project-zh5b.onrender.com/
 **Fixed:** nothing needed at this stage. Earlier in the build I found a red 404 in the console whenever a search had no results. The REST API returns a 404 for "no matches", and the browser logs it where JavaScript can't suppress it. I fixed it by moving to the API's GraphQL endpoint, which returns a normal 200 with an empty list.
 
 ## 3. Keyboard
-**Found:**
-**Fixed:**
+**Tested:** Tab and Shift+Tab through every page, skip link on each page, search with Enter, Status select with arrow keys, Retry in the offline state, note form with Space/Enter, Remove, 200% zoom.
+**Found:** (1) Focus ring visible and order correct throughout. (2) Only the character name was a link, so clicking a card's image did nothing. (3) No pagination: the page showed the first 20 of 826 characters, and the rest were unreachable by mouse or keyboard.
+**Fixed:** (2) the whole card is now one click target, with a single focus ring around the card. (3) added Previous/Next with "Page X of Y"; the page resets to 1 on a new search or filter, and focus moves to the results heading after a page change.
 
 ## 4. Slow 3G
 **Found:**

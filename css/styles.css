@@ -225,3 +225,18 @@ dd { margin: 0; overflow-wrap: anywhere; }
 }
 
 .detail { min-height: 100vh; }
+
+/* Whole card is one click target (stretched link) */
+#character-list article { position: relative; }
+#character-list h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+#character-list > li:not(.skeleton) { cursor: pointer; }
+#character-list > li:not(.skeleton):hover { border-color: var(--accent); }
+#character-list a:focus-visible { outline: none; }
+#character-list > li:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
