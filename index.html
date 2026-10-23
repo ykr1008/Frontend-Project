@@ -46,9 +46,14 @@
       </form>
 
       <section aria-labelledby="results-heading">
-        <h2 id="results-heading">Results</h2>
+        <h2 id="results-heading" tabindex="-1">Results</h2>
         <p id="status-message" role="status"></p>
         <ul id="character-list"></ul>
+        <nav id="pager" aria-label="Pagination" hidden>
+          <button type="button" id="prev">Previous</button>
+          <span id="page-info"></span>
+          <button type="button" id="next">Next</button>
+        </nav>
       </section>
     </main>
 

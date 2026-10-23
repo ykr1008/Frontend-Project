@@ -7,10 +7,17 @@ const statusSelect = document.getElementById("status");
 const list = document.getElementById("character-list");
 const message = document.getElementById("status-message");
 const template = document.getElementById("card-template");
+const pager = document.getElementById("pager");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const pageInfo = document.getElementById("page-info");
+const resultsHeading = document.getElementById("results-heading");
 
 let requestId = 0;
+let page = 1;
 
 function showLoading() {
+  pager.hidden = true;
   list.setAttribute("aria-busy", "true");
   message.textContent = "Loading characters…";
   const skeletons = Array.from({ length: 8 }, () => {
@@ -23,6 +30,7 @@ function showLoading() {
 }
 
 function showEmpty() {
+  pager.hidden = true;
   list.setAttribute("aria-busy", "false");
   list.replaceChildren();
   message.textContent =
@@ -30,13 +38,14 @@ function showEmpty() {
 }
 
 function showError() {
+  pager.hidden = true;
   list.setAttribute("aria-busy", "false");
   list.replaceChildren();
   message.textContent = "Something went wrong loading characters. ";
   const retry = document.createElement("button");
   retry.type = "button";
   retry.textContent = "Retry";
-  retry.addEventListener("click", load);
+  retry.addEventListener("click", () => load());
   message.append(retry);
 }
 
@@ -66,33 +75,58 @@ function showSuccess({ results, info }) {
     return card;
   });
   list.replaceChildren(...cards);
+
+  pager.hidden = info.pages <= 1;
+  pageInfo.textContent = `Page ${page} of ${info.pages}`;
+  prevBtn.disabled = page <= 1;
+  nextBtn.disabled = page >= info.pages;
 }
 
-async function load() {
+async function load({ focusResults = false } = {}) {
   const id = ++requestId;
   showLoading();
   try {
     const data = await fetchCharacters({
       name: searchInput.value.trim(),
       status: statusSelect.value,
+      page,
     });
     if (id !== requestId) return;
-    data.results.length ? showSuccess(data) : showEmpty();
+    if (data.results.length) {
+      showSuccess(data);
+      if (focusResults) resultsHeading.focus();
+    } else {
+      showEmpty();
+    }
   } catch {
     if (id !== requestId) return;
     showError();
   }
 }
 
+function newSearch() {
+  page = 1;
+  load();
+}
+
 let timer;
 searchInput.addEventListener("input", () => {
   clearTimeout(timer);
-  timer = setTimeout(load, 300);
+  timer = setTimeout(newSearch, 300);
 });
-statusSelect.addEventListener("change", load);
+statusSelect.addEventListener("change", newSearch);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  load();
+  newSearch();
+});
+
+prevBtn.addEventListener("click", () => {
+  page -= 1;
+  load({ focusResults: true });
+});
+nextBtn.addEventListener("click", () => {
+  page += 1;
+  load({ focusResults: true });
 });
 
 load();
