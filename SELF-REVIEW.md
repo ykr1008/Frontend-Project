@@ -23,8 +23,9 @@ Tested on the live site: https://frontend-project-zh5b.onrender.com/
 **Fixed:** nothing needed.
 
 ## 5. Lighthouse
-**Found:**
-**Fixed:**
+**Tested:** live site, Chrome Incognito. Browse (mobile and desktop), Detail (desktop) and the not-found page (mobile), re-run after adding pagination and clickable cards.
+**Found:** all four categories 90+ on every run (Browse mobile 99/100/100/100, desktop 97/100/100/100; Detail desktop 95/100/100/100; not-found 100/100/100/100). The stretched-link cards did not affect accessibility. Desktop browse has a small CLS of 0.048, well under the 0.1 limit.
+**Fixed:** nothing needed.
 
 ## 6. View source
 **Found:**
