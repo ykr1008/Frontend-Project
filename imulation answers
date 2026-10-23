@@ -1,0 +1,19 @@
+[33mdba7b4f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Add self-review log
+[33m80a089e[m Self-review: Lighthouse check
+[33ma3a93c2[m Self-review: Slow 3G check
+[33m2d89695[m Self-review: keyboard check, card click target and pagination
+[33m51f549d[m Make whole character card a click target
+[33m4ad6603[m Self-review: console check
+[33md0afa08[m Self-review: resize check
+[33mf674b77[m Finalize README with console notes
+[33m6e0ec97[m Add Lighthouse reports and reserve main height to reduce layout shift
+[33me77f65d[m Reserve detail page height to fix footer layout shift
+[33m59bcdbd[m Add Lighthouse reports and reserve main height to reduce layout shift
+[33m8aaf7ea[m Optimise images: resized WebP, eager above-the-fold, preconnect hints
+[33md6e671e[m Add responsive styles, focus indicators and responsive screenshots
+[33ma0ce2f1[m Add saved page with per-character notes form
+[33m258bf26[m Add character detail page and localStorage save toggle
+[33m5e7d61b[m Render characters with loading, empty, error and success states
+[33m56046cf[m Add semantic HTML skeleton for browse page
+[33mef43b75[m Add semantic HTML skeleton for browse page
+[33m8423e93[m Add GraphQL API client with empty and error handling
