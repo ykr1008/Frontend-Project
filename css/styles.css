@@ -223,3 +223,5 @@ dd { margin: 0; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) {
   .skeleton { animation: none; }
 }
+
+.detail { min-height: 100vh; }
